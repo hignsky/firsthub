@@ -1,41 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #d1{
-            width: 200px;
-            height: 200px;
-            background-color: aqua;
+        .content {
+            border-radius: 5px;
+            padding: 5px 10px;
+            width: max-content;
+            letter-spacing: 5px;
+            position: absolute;
+            color: #ffffff;
         }
-        #d2{
-            width: 200px;
-            height: 200px;
-            background-color: red;
+        .a1{
+            left: -125px;
+            background-color: rgb(16, 243, 243);
+            top: 15%;
+            animation: myfirst1 20s linear 0s infinite alternate;
         }
-        #d3{
-            width: 200px;
-            height: 200px;
-            background-color: yellow;
+        .a2{
+            left: -210px;
+            background-color: rgb(245, 178, 97);
+            top:30%;
+            animation: myfirst1 20s linear 2s infinite alternate;
+        }
+        .a3{
+            left: -300px;
+            background-color: rgb(93, 93, 255);
+            top:45%;
+            animation: myfirst1 20s linear 4s infinite alternate;
+        }
+        .a4{
+            left: -105px;
+            background-color: rgb(155, 241, 68);
+            top:60%;
+            animation: myfirst1 20s linear 6s infinite alternate;
+        }
+        @keyframes myfirst1 {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+        @keyframes myfirst2 {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+        @keyframes myfirst3 {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+        @keyframes myfirst4 {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div id="d1" class="opd ksio">
-
+    <div class="content a1" id="d1">
+        晚上吃什么
     </div>
-    <div id="d2">
-
+    <div class="content a2" id="d1">
+        去哪家电影院想好没
     </div>
-    <div id="d3">
-
+    <div class="content a3" id="d1">
+        明天和我一起陪我姐玩好不好
+    </div>
+    <div class="content a4" id="d1">
+        回句话！
     </div>
     <script>
-        console.log(document.getElementById('d1').className)
-        
+
     </script>
 </body>
+
 </html>
