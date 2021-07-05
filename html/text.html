@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文字效果</title>
+    <style>
+      body {
+        background-color: rgb(41 46 46 / 84%);
+      }
+      .text {
+        text-align: center;
+        font-size: 50px;
+        color: #dd6f2aeb;
+        transition: opacity 1s, transform 1s;
+        opacity: 1;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        animation: zx  15s linear  infinite ;
+      }
+      @keyframes zx {
+        0% {
+          left: 50%;
+          top: 10%;
+        }
+        25% {
+          left: 90%;
+          top: 50%;
+        }
+        50% {
+          left: 50%;
+          top: 90%;
+        }
+        75% {
+          left: 10%;
+          top: 50%;
+        }
+        100% {
+          top: 10%;
+          left: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text" id="d1"></div>
+    <script>
+      let arrs = [
+        "最",
+        "是",
+        "人",
+        "间",
+        "留",
+        "不",
+        "住",
+        "朱",
+        "颜",
+        "辞",
+        "镜",
+        "花",
+        "辞",
+        "树",
+      ];
+      let text = document.getElementById("d1");
+      let count = 0;
+
+      //记录执行次数
+      let n = count;
+      let time = setInterval(() => {
+        text.innerHTML = arrs[count];
+        //放大
+        // text.style.transform = 'scale(2)'
+        setTimeout(() => {
+          text.style.opacity = 0;
+          text.style.transform = "scale(2)";
+        }, 1000);
+        count++;
+        setTimeout(() => {
+          text.style.opacity = 1;
+          text.style.transform = "scale(1)";
+        }, 2000);
+        if (count == 8) {
+          text.style.color = "blue";
+        }
+        if (count == arrs.length) {
+          clearInterval(time);
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>

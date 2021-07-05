@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>诗句</title>
+    <style>
+      .c1 {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      ul {
+        list-style-type: none;
+        opacity: 0;
+        transition: opacity 2s;
+      }
+      li {
+        font-family: cursive;
+        color: #ff00009c;
+        font-size: 20px;
+        padding: 5px 0;
+      }
+      .img-container {
+        transition: 3s;
+        opacity: 0;
+        margin: 15px 0;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      img {
+        transform: rotate(9deg);
+        padding: 8px;
+        width: 10%;
+        border-radius: 31px;
+        box-shadow: black;
+        box-shadow: grey 9px 6px 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c1 lop" id="d1"></div>
+    <div class="img-container" id="img">
+      <img src="../img/img1.jpg" alt="" />
+      <img src="../img/img2.jpg" alt="" />
+      <img src="../img/img3.jpg" alt="" />
+      <img src="../img/img4.jpg" alt="" />
+      <img src="../img/img5.jpg" alt="" />
+    </div>
+    <div class="img-container">
+      <img src="../img/img6.jpg" alt="" />
+      <img src="../img/img7.jpg" alt="" />
+      <img src="../img/img8.jpg" alt="" />
+      <img src="../img/img9.jpg" alt="" />
+      <img src="../img/img10.jpg" alt="" />
+    </div>
+    <script>
+      //拿到div挂载元素
+      let container = document.getElementById("d1");
+      let content =
+        "君问归期未有期,巴山夜雨涨秋池,曾经沧海难为水,除却巫山不是云,两情若是久长时,又岂在朝朝暮暮,衣带渐宽终不悔,为伊消得人憔悴,玲珑骰子安红豆,入骨相思知不知,取次花丛懒回顾,半缘修道半缘君,似此星辰非昨夜,为谁风露立中宵,天涯地角有穷时,只有相思无尽处,直道相思了无益,未妨惆怅是清狂,相思相见知何日,此时此夜难为情,借问江潮与海水,何似君情与妾心";
+      let arr = content.split(",");
+      let template = "";
+      arr.forEach((item) => {
+        template += `<ul>`;
+        for (let i = 0; i < item.length; i++) {
+          template += "<li>" + item[i] + "</li>";
+        }
+        template += "</ul>";
+      });
+      container.innerHTML = template;
+      //获得所有ul元素
+      let uls = document.getElementsByTagName("ul");
+      //记录次数
+      let num = 0;
+      let time = setInterval(() => {
+        uls[num].style.opacity = 1;
+        num++;
+        console.log(num);
+        if (num == uls.length) {
+          let container = document.getElementsByClassName("img-container");
+          for (let i = 0; i < container.length; i++) {
+            container[i].style.opacity = 1;
+          }
+          clearInterval(time);
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>
